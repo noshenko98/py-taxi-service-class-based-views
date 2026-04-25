@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}<title>Manufacturers</title>{% endblock %}
+{% block content %}
+  <h1>Manufacturer list</h1>
+  {% for manufacturer in manufacturer_list %}
+    <ul>
+      <li>{{ manufacturer.name }}</li>
+    </ul>
+
+  {% endfor %}
+{% endblock %}
