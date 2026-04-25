@@ -4,17 +4,22 @@
 
 {% block content %}
   <h1>{{ car.model }}</h1>
-  <ul>
-    <li>Manufacturer: {{ car.manufacturer.name }} (Country: {{ car.manufacturer.country }})</li>
-    <li>Drivers:
+    <table>
+    <tbody>
+    <td>
+      Manufacturer: {{ car.manufacturer.name }} (Country: {{ car.manufacturer.country }})
+    </td>
+    </tbody>
+    </table>
+    <table>
+      Drivers:
       {% for driver in car.drivers.all %}
-        <ul>
-          <li>
+        <tbody>
+          <td>
             {{ driver.first_name }} {{ driver.last_name }}
-          </li>
-        </ul>
+          </td>
+        </tbody>
       {% endfor %}
-    </li>
-  </ul>
+    </table>
 {% endblock %}
 

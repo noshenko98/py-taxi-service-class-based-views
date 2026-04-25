@@ -7,7 +7,7 @@
   <table>
   {% for driver in driver_list %}
     <tbody>
-      <th><a href={% url "taxi:driver-detail" pk=driver.id %}>{{ driver.first_name }} {{ driver.last_name }}</a></th>
+      <td><a href={% url "taxi:driver-detail" pk=driver.id %}>{{ driver.username }}</a></td>
     </tbody>
   {% endfor %}
   </table>

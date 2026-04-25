@@ -7,7 +7,7 @@
   <table>
   {% for car in car_list %}
     <tbody>
-      <th><a href={% url "taxi:car-detail" pk=car.id %}>{{ car.model }}</a></th>
+      <td><a href={% url "taxi:car-detail" pk=car.id %}>{{ car.id }}</a></td>
     </tbody>
   {% endfor %}
   </table>
