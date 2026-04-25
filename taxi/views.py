@@ -1,5 +1,3 @@
-from zipapp import create_archive
-
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 
@@ -18,7 +16,7 @@ def index(request):
     return render(request, "taxi/index.html", context=context)
 
 
-class ManufactureListView(ListView):
+class ManufacturerListView(ListView):
     model = Manufacturer
     queryset = Manufacturer.objects.order_by("name")
     paginate_by = 5
@@ -41,4 +39,4 @@ class DriverListView(ListView):
 
 class DriverDetailView(DetailView):
     model = Driver
-    queryset = Driver.objects.prefetch_related("cars")
+    queryset = Driver.objects.prefetch_related("cars__manufacturer")
